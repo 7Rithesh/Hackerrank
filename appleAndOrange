@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,s,t;
+    int m,n;
+    cin >> s >> t;
+    cin >> a >> b;
+    cin >> m >> n;
+    int apples[m];
+    int oranges[n];
+    int app_pos[m];
+    int ora_pos[n];
+    for(int  i=0 ; i < m;i++)
+    {
+        cin >> apples[i];
+    }
+    for(int j=0; j<n; j++)
+    {
+        cin >> oranges[j];
+    }
+    for(int  i=0 ; i < m;i++)
+    {
+        app_pos[i] = a + apples[i];
+    }
+    for(int j=0; j<n; j++)
+    {
+        ora_pos[j]= b+oranges[j];
+    }
+    int app_count = 0;
+    int ora_count = 0;
+    for(int i=0; i< m; i++)
+    {
+        if(app_pos[i] >= s && ora_pos[i] <= t)
+        {
+            app_count ++;
+        }
+    }
+    for(int j =0; j< n; j++)
+    {
+        if(ora_pos[j] >= s && ora_pos[j] <= t)
+        {
+            ora_count++;
+        }
+    }
+    cout << app_count << endl << ora_count;
+    return 0;
+}
